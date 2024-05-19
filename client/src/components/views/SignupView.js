@@ -80,18 +80,18 @@ const SignupView = () => {
           </Link>
         </Typography>
         <Typography variant="h5" gutterBottom>
-          Sign Up
+          Регистрация
         </Typography>
         <Typography color="text.secondary" >
-          Already have an account?
+          Уже есть аккаунт?
         </Typography>
         <Button variant="text" sx={{ minWidth: 65 }} 
-              onClick={() => navigate("/login")}>  Login
+              onClick={() => navigate("/login")}>  Войти
         </Button>
         
         <Box component="form" onSubmit={handleSubmit}>
           <TextField
-            label="Username"
+            label="Имя"
             fullWidth
             margin="normal"
             autoFocus
@@ -103,7 +103,7 @@ const SignupView = () => {
             helperText={errors.username}
           />
           <TextField
-            label="Email Address"
+            label="E-mail"
             fullWidth
             margin="normal"
             autoComplete="email"
@@ -115,7 +115,7 @@ const SignupView = () => {
             helperText={errors.email}
           />
           <TextField
-            label="Password"
+            label="Пароль"
             fullWidth
             required
             margin="normal"
@@ -129,7 +129,7 @@ const SignupView = () => {
           />
           <ErrorAlert error={serverError} />
           <Button type="submit" fullWidth variant="contained" sx={{ my: 2 }}>
-            Sign Up
+            Регистрация
           </Button>
         </Box>
         <Box sx={{ mt: 3 }}>

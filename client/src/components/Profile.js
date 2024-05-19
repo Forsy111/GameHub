@@ -48,12 +48,12 @@ const Profile = (props) => {
             </Box>
           ) : user.biography ? (
             <Typography textAlign="center" variant="p">
-              <b>Bio: </b>
+              <b>Биография: </b>
               {user.biography}
             </Typography>
           ) : (
             <Typography variant="p">
-              <i>No bio yet</i>
+              <i>Нет биографии</i>
             </Typography>
           )}
 
@@ -63,23 +63,23 @@ const Profile = (props) => {
                 startIcon={<AiFillEdit color={iconColor} />}
                 onClick={props.handleEditing}
               >
-                {props.editing ? <>Cancel</> : <>Edit bio</>}
+                {props.editing ? <>Назад</> : <>Изменить биографию</>}
               </Button>
             </Box>
           )}
 
           {currentUser && user._id !== currentUser.userId && (
             <Button variant="outlined" onClick={props.handleMessage}>
-              Message
+              Сообщение
             </Button>
           )}
 
           <HorizontalStack>
             <Typography color="text.secondary">
-              Likes <b>{props.profile.posts.likeCount}</b>
+              Лайки <b>{props.profile.posts.likeCount}</b>
             </Typography>
             <Typography color="text.secondary">
-              Posts <b>{props.profile.posts.count}</b>
+              Посты <b>{props.profile.posts.count}</b>
             </Typography>
           </HorizontalStack>
         </Stack>

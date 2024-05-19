@@ -101,14 +101,14 @@ const PostBrowser = (props) => {
 
   const contentTypeSorts = {
     posts: {
-      "-createdAt": "Latest",
-      "-likeCount": "Likes",
-      "-commentCount": "Comments",
-      createdAt: "Earliest",
+      "-createdAt": "Последнее",
+      "-likeCount": "Лайки",
+      "-commentCount": "Комментарии",
+      createdAt: "Старые",
     },
     liked: {
-      "-createdAt": "Latest",
-      createdAt: "Earliest",
+      "-createdAt": "Последнее",
+      createdAt: "Старые",
     },
   };
 
@@ -131,10 +131,10 @@ const PostBrowser = (props) => {
         {searchExists && (
           <Box>
             <Typography variant="h5" gutterBottom>
-              Showing results for "{search.get("search")}"
+              Результат для "{search.get("search")}"
             </Typography>
             <Typography color="text.secondary" variant="span">
-              {count} results found
+              Найдено {count} публикаций
             </Typography>
           </Box>
         )}
@@ -153,13 +153,13 @@ const PostBrowser = (props) => {
           <Stack py={5} alignItems="center">
             <Typography variant="h5" color="text.secondary" gutterBottom>
               {posts.length > 0 ? (
-                <>All posts have been viewed</>
+                <>Все публикации просмотрены</>
               ) : (
-                <>No posts available</>
+                <>Нет постов</>
               )}
             </Typography>
             <Button variant="text" size="small" onClick={handleBackToTop}>
-              Back to top
+              Вернуться наверх
             </Button>
           </Stack>
         ) : (
@@ -168,10 +168,10 @@ const PostBrowser = (props) => {
           posts.length > 0 && (
             <Stack pt={2} pb={6} alignItems="center" spacing={2}>
               <Button onClick={fetchPosts} variant="contained">
-                Load more
+                Загрузи больше
               </Button>
               <Button variant="text" size="small" onClick={handleBackToTop}>
-                Back to top
+                Вернуться наверх
               </Button>
             </Stack>
           )

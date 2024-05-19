@@ -16,7 +16,7 @@ const SortBySelect = ({ onSortBy, sortBy, sorts }) => {
           },
         }}
       >
-        Sort by:
+        Фильтр:
       </Typography>
       <Select
         size="small"

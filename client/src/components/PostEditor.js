@@ -64,7 +64,7 @@ const PostEditor = () => {
           <HorizontalStack spacing={2}>
             <UserAvatar width={50} height={50} username={user.username} />
             <Typography variant="h5">
-              What would you like to post today {user.username}?
+              Чем поделитесь сегодня {user.username}?
             </Typography>
           </HorizontalStack>
         )}
@@ -72,7 +72,7 @@ const PostEditor = () => {
         <Box component="form" onSubmit={handleSubmit}>
           <TextField
             fullWidth
-            label="Game name"
+            label="Выберите игру"
             required
             name="game"
             margin="normal"
@@ -83,7 +83,7 @@ const PostEditor = () => {
 
           <TextField
             fullWidth
-            label="Title"
+            label="Описание"
             required
             name="title"
             margin="normal"
@@ -94,7 +94,7 @@ const PostEditor = () => {
 
           <TextField
             fullWidth
-            label="Content"
+            label="Подробности гайда"
             multiline
             rows={10}
             name="content"
@@ -114,7 +114,7 @@ const PostEditor = () => {
               mt: 2,
             }}
           >
-            {loading ? <>Submitting</> : <>Submit</>}
+            {loading ? <>Отправляется</> : <>Отправить</>}
           </Button>
         </Box>
       </Stack>

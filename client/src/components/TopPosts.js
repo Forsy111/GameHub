@@ -40,7 +40,7 @@ const TopPosts = () => {
       <Card>
         <HorizontalStack>
           <MdLeaderboard />
-          <Typography>Top Posts</Typography>
+          <Typography>Топ гайды</Typography>
         </HorizontalStack>
       </Card>
       {!loading ? (

@@ -6,7 +6,7 @@ const FetchFail = () => {
   return (
     <Box display="flex" justifyContent="center">
       <Typography color="text.secondary" variant="h6" sx={{ mt: 2 }}>
-        Something went wrong!
+        Что-то пошло не так!
       </Typography>
     </Box>
   );

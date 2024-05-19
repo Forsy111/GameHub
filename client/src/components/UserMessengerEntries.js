@@ -19,7 +19,7 @@ const UserMessengerEntries = (props) => {
           >
             <AiFillMessage size={30} />
             <Typography>
-              <b>Your Conversations</b>
+              <b>Ваши контакты</b>
             </Typography>
           </HorizontalStack>
           <Divider />
@@ -47,10 +47,10 @@ const UserMessengerEntries = (props) => {
           textAlign="center"
         >
           <BiSad size={60} />
-          <Typography variant="h5">No Conversations</Typography>
-          <Typography color="text.secondary" sx={{ maxWidth: "70%" }}>
-            Click 'Message' on another user's profile to start a conversation
-          </Typography>
+          <Typography variant="h5">Нет контактов</Typography>
+          {/* <Typography color="text.secondary" sx={{ maxWidth: "70%" }}>
+            Нажмите «Сообщение» в профиле другого пользователя, чтобы начать разговор.
+          </Typography> */}
         </Stack>
       )}
     </>

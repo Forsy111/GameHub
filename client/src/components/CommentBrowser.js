@@ -73,13 +73,13 @@ const CommentBrowser = (props) => {
           <Stack py={5} alignItems="center">
             <Typography variant="h5" color="text.secondary" gutterBottom>
               {comments.length > 0 ? (
-                <>All comments have been viewed</>
+                <>Все комментарии просмотрены</>
               ) : (
-                <>No comments available</>
+                <>Нет комментариев</>
               )}
             </Typography>
             <Button variant="text" size="small" onClick={handleBackToTop}>
-              Back to top
+              Вернуться наверх
             </Button>
           </Stack>
         </>

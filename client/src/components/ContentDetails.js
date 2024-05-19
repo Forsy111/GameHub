@@ -23,7 +23,7 @@ const ContentDetails = ({ username, createdAt, edited, preview }) => {
         {!preview && (
           <>
             {" "}
-            · <Moment fromNow>{createdAt}</Moment> {edited && <>(Edited)</>}
+            · <Moment fromNow>{createdAt}</Moment> {edited && <>(Изменен)</>}
           </>
         )}
       </Typography>

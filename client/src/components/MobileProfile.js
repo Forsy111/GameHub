@@ -79,9 +79,9 @@ const MobileProfile = (props) => {
             ) : (
               <Typography variant="p">
                 <i>
-                  No bio yet{" "}
+                  Нет биографии{" "}
                   {currentUser && user._id === currentUser.userId && (
-                    <span>- Tap on the edit icon to add your bio</span>
+                    <span>Изменить биографию</span>
                   )}
                 </i>
               </Typography>
@@ -89,7 +89,7 @@ const MobileProfile = (props) => {
             {currentUser && user._id !== currentUser.userId && (
               <Box sx={{ mt: 2 }}>
                 <Button variant="outlined" onClick={props.handleMessage}>
-                  Message
+                  Сообщение
                 </Button>
               </Box>
             )}

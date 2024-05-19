@@ -64,7 +64,7 @@ const ProfileView = () => {
     let error = "";
 
     if (content.length > 250) {
-      error = "Bio cannot be longer than 250 characters";
+      error = "Биография не больше 250 символов";
     }
 
     return error;

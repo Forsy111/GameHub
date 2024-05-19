@@ -102,7 +102,7 @@ const Navbar = () => {
           <Box component="form" onSubmit={handleSubmit}>
             <TextField
               size="small"
-              label="Search for posts..."
+              label="Поиск..."
               sx={{ flexGrow: 1, maxWidth: 300 }}
               onChange={handleChange}
               value={search}
@@ -128,17 +128,17 @@ const Navbar = () => {
               <IconButton component={Link}  to={"/users/" + username}>
                 <UserAvatar width={30} height={30} username={user.username} />
               </IconButton>
-              <Button onClick={handleLogout}>Logout</Button>
+              <Button onClick={handleLogout}>Выйти</Button>
             </>
           ) : (
             <>
               <Button variant="text" sx={{ minWidth: 80 }} 
               onClick={() => navigate("/signup")}>
-                Sign Up
+                Регистрацмя
               </Button>
               <Button variant="text" sx={{ minWidth: 65 }} 
               onClick={() => navigate("/login")}>
-                Login
+                Вход
               </Button>
             </>
           )}
@@ -148,7 +148,7 @@ const Navbar = () => {
         <Box component="form" onSubmit={handleSubmit} mt={2}>
           <TextField
             size="small"
-            label="Search for posts..."
+            label="Поиск..."
             fullWidth
             onChange={handleChange}
             value={search}

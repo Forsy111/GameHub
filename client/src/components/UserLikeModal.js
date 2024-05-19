@@ -93,7 +93,7 @@ const UserLikeModal = ({ postId, open, setOpen }) => {
       >
         <Card>
           <Typography variant="h5" mb={2}>
-            Liked by
+            Лайки
           </Typography>
           <Stack>
             <Stack spacing={2}>

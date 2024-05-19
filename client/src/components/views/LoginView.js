@@ -51,14 +51,14 @@ const LoginView = () => {
           </Link>
         </Typography>
         <Typography variant="h5" gutterBottom>
-          Login
+          Вход
         </Typography>
         <Typography color="text.secondary">
-          Don't have an account yet? <Link to="/signup">Sign Up</Link>
+         Нету аккаунта? <Link to="/signup">Регистрация</Link>
         </Typography>
         <Box component="form" onSubmit={handleSubmit}>
           <TextField
-            label="Email Address"
+            label="E-mail"
             fullWidth
             margin="normal"
             autoComplete="email"
@@ -69,7 +69,7 @@ const LoginView = () => {
             onChange={handleChange}
           />
           <TextField
-            label="Password"
+            label="Пароль"
             fullWidth
             required
             margin="normal"
@@ -81,7 +81,7 @@ const LoginView = () => {
 
           <ErrorAlert error={serverError} />
           <Button type="submit" fullWidth variant="contained" sx={{ my: 2 }}>
-            Login
+            Войти
           </Button>
         </Box>
         <Box sx={{ mt: 3 }}>

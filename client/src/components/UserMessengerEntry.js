@@ -36,7 +36,7 @@ const UserMessengerEntry = (props) => {
         </ListItemAvatar>
         <ListItemText
           primary={username}
-          secondary={moment(props.conversation.lastMessageAt).fromNow()}
+          // secondary={moment(props.conversation.lastMessageAt).fromNow()}
         />
       </MenuItem>
     </>

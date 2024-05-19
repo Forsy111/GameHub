@@ -78,7 +78,7 @@ const CommentEditor = ({ label, comment, addComment, setReplying }) => {
               mt: 2,
             }}
           >
-            {loading ? <div>Submitting</div> : <div>Submit</div>}
+            {loading ? <div>Отправляется</div> : <div>Отправить</div>}
           </Button>
         </Box>
       </Stack>

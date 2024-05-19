@@ -41,7 +41,7 @@ const FindUsers = () => {
         <HorizontalStack justifyContent="space-between">
           <HorizontalStack>
             <AiOutlineUser />
-            <Typography>Find Others</Typography>
+            <Typography>Найти других</Typography>
           </HorizontalStack>
           <IconButton
             sx={{ padding: 0 }}

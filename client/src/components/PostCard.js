@@ -5,6 +5,7 @@ import {
   Stack,
   Typography,
   useTheme,
+  TextField,
 } from "@mui/material";
 import { Box } from "@mui/system";
 import React, { useState } from "react";
@@ -18,7 +19,7 @@ import LikeBox from "./LikeBox";
 import PostContentBox from "./PostContentBox";
 import HorizontalStack from "./util/HorizontalStack";
 
-import {} from "react-icons/ai";
+import { } from "react-icons/ai";
 import ContentUpdateEditor from "./ContentUpdateEditor";
 import Markdown from "./Markdown";
 
@@ -75,9 +76,10 @@ const PostCard = (props) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    const title = e.target.value;
     const content = e.target.content.value;
-    await updatePost(post._id, isLoggedIn(), { content });
-    setPost({ ...post, content, edited: true });
+    await updatePost(post._id, isLoggedIn(), { title, content });
+    setPost({ ...post, title, content, edited: true });
     setEditing(false);
   };
 
@@ -154,21 +156,41 @@ const PostCard = (props) => {
             <Typography
               variant="h6"
               gutterBottom
-              sx={{ overflow: "hidden", display: 'inline', mt: 1, px: 1, maxHeight: 125, maxWidth: 'auto',
-               border: 1, borderColor: 'primary.main', borderRadius: '6px' }}
+              sx={{
+                overflow: "hidden", display: 'inline', mt: 1, px: 1, maxHeight: 125, maxWidth: 'auto',
+                border: 1, borderColor: 'primary.main', borderRadius: '6px'
+              }}
               className="game"
             >
               {post.game}
             </Typography>
 
-            <Typography
-              variant="h5"
-              gutterBottom
-              sx={{ overflow: "hidden", mt: 1, maxHeight: 125 }}
-              className="title"
-            >
-              {post.title}
-            </Typography>
+
+            {/* {preview !== "secondary" &&
+              (editing ? (
+                <Box component="form" onSubmit={handleSubmit}>
+                  <Stack>
+                    <TextField
+                      value={post.title}
+                      fullWidth
+                      margin="normal"
+                      name="content"
+                      sx={{ backgroundColor: "white" }}
+                      onChange={handleSubmit}
+                      multiline
+                    />
+                  </Stack>
+                </Box>
+              ) : ( */}
+                <Typography
+                  variant="h5"
+                  gutterBottom
+                  sx={{ overflow: "hidden", mt: 1, maxHeight: 125 }}
+                  className="title"
+                >
+                  {post.title}
+                </Typography>
+              {/* ))} */}
 
 
             {preview !== "secondary" &&
