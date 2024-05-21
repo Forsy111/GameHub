@@ -27,7 +27,7 @@ const register = async (req, res) => {
     const { username, email, password } = req.body;
 
     if (!(username && email && password)) {
-      throw new Error("All input required");
+      throw new Error("Все поля обязательны");
     }
 
     const normalizedEmail = email.toLowerCase();
@@ -39,7 +39,7 @@ const register = async (req, res) => {
     });
 
     if (existingUser) {
-      throw new Error("Email and username must be unique");
+      throw new Error("E-mail и имя должны быть уникальны");
     }
 
     const user = await User.create({
@@ -61,7 +61,7 @@ const login = async (req, res) => {
     const { email, password } = req.body;
 
     if (!(email && password)) {
-      throw new Error("All input required");
+      throw new Error("Все поля обязательны");
     }
 
     const normalizedEmail = email.toLowerCase();
@@ -69,13 +69,13 @@ const login = async (req, res) => {
     const user = await User.findOne({ email: normalizedEmail });
 
     if (!user) {
-      throw new Error("Email or password incorrect");
+      throw new Error("Email или пароль некорректны");
     }
 
     const isPasswordValid = await bcrypt.compare(password, user.password);
 
     if (!isPasswordValid) {
-      throw new Error("Email or password incorrect");
+      throw new Error("Email или пароль некорректны");
     }
 
     const token = jwt.sign(buildToken(user), process.env.TOKEN_KEY);
@@ -178,7 +178,7 @@ const getUser = async (req, res) => {
     const user = await User.findOne({ username }).select("-password");
 
     if (!user) {
-      throw new Error("User does not exist");
+      throw new Error("Пользователь не найден");
     }
 
     const posts = await Post.find({ poster: user._id })

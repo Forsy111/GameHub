@@ -134,7 +134,7 @@ const Navbar = () => {
             <>
               <Button variant="text" sx={{ minWidth: 80 }} 
               onClick={() => navigate("/signup")}>
-                Регистрацмя
+                Регистрация
               </Button>
               <Button variant="text" sx={{ minWidth: 65 }} 
               onClick={() => navigate("/login")}>

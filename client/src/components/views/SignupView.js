@@ -50,20 +50,20 @@ const SignupView = () => {
   const validate = () => {
     const errors = {};
 
-    if (!isLength(formData.username, { min: 6, max: 30 })) {
-      errors.username = "Must be between 6 and 30 characters long";
+    if (!isLength(formData.username, { min: 5, max: 30 })) {
+      errors.username = "Количество символов от 5 до 30";
     }
 
     if (contains(formData.username, " ")) {
-      errors.username = "Must contain only valid characters";
+      errors.username = "Поле пустое";
     }
 
     if (!isLength(formData.password, { min: 8 })) {
-      errors.password = "Must be at least 8 characters long";
+      errors.password = "Минимум 8 символов";
     }
 
     if (!isEmail(formData.email)) {
-      errors.email = "Must be a valid email address";
+      errors.email = "Некорректный e-mail";
     }
 
     setErrors(errors);
