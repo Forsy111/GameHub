@@ -48,12 +48,12 @@ const Profile = (props) => {
             </Box>
           ) : user.biography ? (
             <Typography textAlign="center" variant="p">
-              <b>Биография: </b>
+              <b>Био: </b>
               {user.biography}
             </Typography>
           ) : (
             <Typography variant="p">
-              <i>Нет биографии</i>
+              <i>Нет био</i>
             </Typography>
           )}
 
@@ -63,7 +63,7 @@ const Profile = (props) => {
                 startIcon={<AiFillEdit color={iconColor} />}
                 onClick={props.handleEditing}
               >
-                {props.editing ? <>Назад</> : <>Изменить биографию</>}
+                {props.editing ? <>Назад</> : <>Изменить био</>}
               </Button>
             </Box>
           )}
