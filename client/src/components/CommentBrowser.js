@@ -52,8 +52,8 @@ const CommentBrowser = (props) => {
   };
 
   const sorts = {
-    "-createdAt": "Latest",
-    createdAt: "Earliest",
+    "-createdAt": "Последние",
+    createdAt: "Старые",
   };
 
   return (

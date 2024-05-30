@@ -44,13 +44,13 @@ const MobileProfile = (props) => {
             <Box sx={{ display: { xs: "none", sm: "block" } }}>
               <HorizontalStack spacing={3}>
                 <Stack alignItems="center">
-                  <Typography>Likes</Typography>
+                  <Typography>Лайки</Typography>
                   <Typography color="text.secondary">
                     <b>{props.profile.posts.likeCount}</b>
                   </Typography>
                 </Stack>
                 <Stack alignItems="center">
-                  <Typography color="text.secondary">Posts</Typography>
+                  <Typography color="text.secondary">Посты</Typography>
                   <Typography color="text.secondary">
                     <b>{props.profile.posts.count}</b>
                   </Typography>
@@ -72,16 +72,16 @@ const MobileProfile = (props) => {
             {user.biography ? (
               <>
                 <Typography textAlign="center" variant="p">
-                  <b>Bio: </b>
+                  <b>О себе: </b>
                   {user.biography}
                 </Typography>
               </>
             ) : (
               <Typography variant="p">
                 <i>
-                  Нет биографии{" "}
+                  Нет описания{" "}
                   {currentUser && user._id === currentUser.userId && (
-                    <span>Изменить биографию</span>
+                    <span>Создать описание</span>
                   )}
                 </i>
               </Typography>

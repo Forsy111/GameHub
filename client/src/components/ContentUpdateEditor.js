@@ -3,9 +3,14 @@ import React, { useState } from "react";
 
 const ContentUpdateEditor = (props) => {
   const [content, setContent] = useState(props.originalContent);
+  const [title, setTitle] = useState(props.originalTitle);
   const [error, setError] = useState("");
 
-  const handleChange = (e) => {
+  const handleChangeTitle = (e) => {
+    setTitle(e.target.value);
+  };
+
+  const handleChangeContent = (e) => {
     setContent(e.target.value);
   };
 
@@ -13,10 +18,12 @@ const ContentUpdateEditor = (props) => {
     e.preventDefault();
 
     const content = e.target.content.value;
+    const title = e.target.title.value;
     let error = null;
 
     if (props.validate) {
       error = props.validate(content);
+      error = props.validate(title);
     }
 
     if (error && error.length !== 0) {
@@ -30,12 +37,23 @@ const ContentUpdateEditor = (props) => {
     <Box component="form" onSubmit={handleSubmit}>
       <Stack>
         <TextField
+          value={title}
+          fullWidth
+          margin="normal"
+          name="title"
+          sx={{ backgroundColor: "white" }}
+          onChange={handleChangeTitle}
+          error={error.length !== 0}
+          helperText={error}
+          multiline
+        />
+        <TextField
           value={content}
           fullWidth
           margin="normal"
           name="content"
           sx={{ backgroundColor: "white" }}
-          onChange={handleChange}
+          onChange={handleChangeContent}
           error={error.length !== 0}
           helperText={error}
           multiline

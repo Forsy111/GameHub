@@ -76,7 +76,7 @@ const PostCard = (props) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const title = e.target.value;
+    const title = e.target.title.value;
     const content = e.target.content.value;
     await updatePost(post._id, isLoggedIn(), { title, content });
     setPost({ ...post, title, content, edited: true });
@@ -165,38 +165,11 @@ const PostCard = (props) => {
               {post.game}
             </Typography>
 
-
-            {/* {preview !== "secondary" &&
-              (editing ? (
-                <Box component="form" onSubmit={handleSubmit}>
-                  <Stack>
-                    <TextField
-                      value={post.title}
-                      fullWidth
-                      margin="normal"
-                      name="content"
-                      sx={{ backgroundColor: "white" }}
-                      onChange={handleSubmit}
-                      multiline
-                    />
-                  </Stack>
-                </Box>
-              ) : ( */}
-                <Typography
-                  variant="h5"
-                  gutterBottom
-                  sx={{ overflow: "hidden", mt: 1, maxHeight: 125 }}
-                  className="title"
-                >
-                  {post.title}
-                </Typography>
-              {/* ))} */}
-
-
             {preview !== "secondary" &&
               (editing ? (
                 <ContentUpdateEditor
                   handleSubmit={handleSubmit}
+                  originalTitle={post.title}
                   originalContent={post.content}
                 />
               ) : (
@@ -205,6 +178,14 @@ const PostCard = (props) => {
                   overflow="hidden"
                   className="content"
                 >
+                  <Typography
+                    variant="h5"
+                    gutterBottom
+                    sx={{ overflow: "hidden", mt: 1, maxHeight: 125 }}
+                    className="title"
+                  >
+                    {post.title}
+                  </Typography>
                   <Markdown content={post.content} />
                 </Box>
               ))}

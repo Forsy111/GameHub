@@ -70,6 +70,7 @@ const PostEditor = () => {
         )}
 
         <Box component="form" onSubmit={handleSubmit}>
+
           <TextField
             fullWidth
             label="Выберите игру"

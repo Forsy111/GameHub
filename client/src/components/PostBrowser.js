@@ -101,13 +101,13 @@ const PostBrowser = (props) => {
 
   const contentTypeSorts = {
     posts: {
-      "-createdAt": "Последнее",
+      "-createdAt": "Последние",
       "-likeCount": "Лайки",
       "-commentCount": "Комментарии",
       createdAt: "Старые",
     },
     liked: {
-      "-createdAt": "Последнее",
+      "-createdAt": "Последние",
       createdAt: "Старые",
     },
   };
