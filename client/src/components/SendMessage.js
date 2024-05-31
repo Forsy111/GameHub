@@ -31,7 +31,7 @@ const SendMessage = (props) => {
       <HorizontalStack>
         <TextField
           onChange={(e) => setContent(e.target.value)}
-          label="Send a message..."
+          label="Отправьте сообщение..."
           fullWidth
           value={content}
           autoComplete="off"
@@ -44,7 +44,7 @@ const SendMessage = (props) => {
         />
 
         <Button onClick={handleSendMessage} disabled={content.length === 0}>
-          Send
+          Отправить
         </Button>
       </HorizontalStack>
     </Stack>

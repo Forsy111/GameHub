@@ -58,25 +58,36 @@ const Comment = (props) => {
   };
 
   let style = {
-    backgroundColor: theme.palette.grey[100],
+    backgroundColor: "white",
     borderRadius: 1.5,
     mb: theme.spacing(2),
     padding: theme.spacing(0),
   };
 
   if (depth % 2 === 1) {
-    style.backgroundColor = "white";
+    style.backgroundColor = theme.palette.grey[200];
+  }
+
+  let style2 = {
+    pl: theme.spacing(2),
+    pt: theme.spacing(1),
+    pb: theme.spacing(1),
+    pr: 1,
+  }
+  if (depth > 0) {
+    style2 = {
+      pl: theme.spacing(2),
+      pt: theme.spacing(1),
+      pb: theme.spacing(0),
+      pr: theme.spacing(0),
+    }
   }
 
   return (
     <Box sx={style}>
+      { }
       <Box
-        sx={{
-          pl: theme.spacing(2),
-          pt: theme.spacing(1),
-          pb: theme.spacing(1),
-          pr: 1,
-        }}
+        sx={style2}
       >
         {props.profile ? (
           <Box>
@@ -181,6 +192,7 @@ const Comment = (props) => {
                     addComment={addComment}
                     removeComment={removeComment}
                     editComment={editComment}
+                    className="commentChildren"
                   />
                 ))}
               </Box>

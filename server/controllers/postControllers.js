@@ -77,11 +77,11 @@ const updatePost = async (req, res) => {
     const post = await Post.findById(postId);
 
     if (!post) {
-      throw new Error("Post does not exist");
+      throw new Error("Поста не существует");
     }
 
     if (post.poster != userId && !isAdmin) {
-      throw new Error("Not authorized to update post");
+      throw new Error("Вы не авторизированы");
     }
 
     post.title = title;

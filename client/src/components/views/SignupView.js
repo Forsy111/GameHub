@@ -73,7 +73,10 @@ const SignupView = () => {
 
   return (
     <Container maxWidth={"xs"} sx={{ mt: { xs: 2, md: 6 } }}>
-      <Stack alignItems="center">
+      <Stack alignItems="center"
+        backgroundColor="white"
+        padding="2rem 3rem"
+        borderRadius="1rem">
         <Typography variant="h2" color="text.secondary" sx={{ mb: 6 }}>
           <Link to="/" color="inherit" underline="none">
             GameHub

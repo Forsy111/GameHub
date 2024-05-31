@@ -168,7 +168,7 @@ const PostBrowser = (props) => {
           posts.length > 0 && (
             <Stack pt={2} pb={6} alignItems="center" spacing={2}>
               <Button onClick={fetchPosts} variant="contained">
-                Загрузи больше
+                Загрузить больше
               </Button>
               <Button variant="text" size="small" onClick={handleBackToTop}>
                 Вернуться наверх

@@ -131,7 +131,7 @@ const Comments = () => {
       )}
     </Stack>
   ) : (
-    <Loading label="Loading comments" />
+    <Loading label="Загрузка" />
   );
 };
 

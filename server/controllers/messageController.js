@@ -7,25 +7,21 @@ const sendMessage = async (req, res) => {
   try {
     const recipientId = req.params.id;
     const { content, userId } = req.body;
-
     const recipient = await User.findById(recipientId);
 
     if (!recipient) {
-      throw new Error("Recipient not found");
+      throw new Error("Чатов нет");
     }
-
     let conversation = await Conversation.findOne({
       recipients: {
         $all: [userId, recipientId],
       },
     });
-
     if (!conversation) {
       conversation = await Conversation.create({
         recipients: [userId, recipientId],
       });
     }
-
     await Message.create({
       conversation: conversation._id,
       sender: userId,
@@ -33,7 +29,6 @@ const sendMessage = async (req, res) => {
     });
 
     conversation.lastMessageAt = Date.now();
-
     conversation.save();
 
     return res.json({ success: true });
@@ -50,7 +45,7 @@ const getMessages = async (req, res) => {
     const conversation = await Conversation.findById(conversationId);
 
     if (!conversation) {
-      throw new Error("Conversation not found");
+      throw new Error("Чатов нет");
     }
 
     const messages = await Message.find({

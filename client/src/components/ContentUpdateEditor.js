@@ -36,17 +36,19 @@ const ContentUpdateEditor = (props) => {
   return (
     <Box component="form" onSubmit={handleSubmit}>
       <Stack>
-        <TextField
-          value={title}
-          fullWidth
-          margin="normal"
-          name="title"
-          sx={{ backgroundColor: "white" }}
-          onChange={handleChangeTitle}
-          error={error.length !== 0}
-          helperText={error}
-          multiline
-        />
+        {title ? (
+          <TextField
+            value={title}
+            fullWidth
+            margin="normal"
+            name="title"
+            sx={{ backgroundColor: "white" }}
+            onChange={handleChangeTitle}
+            error={error.length !== 0}
+            helperText={error}
+            multiline
+          />
+        ):null}
         <TextField
           value={content}
           fullWidth
